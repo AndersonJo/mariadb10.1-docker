@@ -46,9 +46,13 @@ COPY my.cnf /etc/mysql/my.cnf
 
 RUN apt-get update
 RUN apt-get install -y vim
+RUN apt-get install -y net-tools
 ENV TERM dumb
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 3306
+EXPOSE 4567
+EXPOSE 4568
+EXPOSE 4444
 CMD ["mysqld"]
