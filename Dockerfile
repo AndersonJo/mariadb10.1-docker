@@ -50,6 +50,7 @@ COPY my.cnf /etc/mysql/my.cnf
 RUN apt-get update
 RUN apt-get install -y vim
 RUN apt-get install -y net-tools
+RUN echo 'set term=builtin_ansi' > ~/.vimrc
 ENV TERM dumb
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
